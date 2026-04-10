@@ -1,0 +1,126 @@
+:root {
+  font-family: "Segoe UI", sans-serif;
+  color: #11263c;
+  background:
+    radial-gradient(circle at top left, rgba(248, 184, 78, 0.45), transparent 32%),
+    linear-gradient(135deg, #fff7ea 0%, #eef6ff 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+}
+
+.hero,
+.card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(17, 38, 60, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 24px 64px rgba(17, 38, 60, 0.12);
+  padding: 2rem;
+}
+
+.badge,
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  color: #ce6f18;
+  margin: 0 0 1rem;
+}
+
+.hero h1,
+.card h2 {
+  margin: 0 0 1rem;
+}
+
+.copy {
+  margin: 0 0 1.5rem;
+  line-height: 1.7;
+}
+
+.toggle {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.toggle button,
+.auth-form button,
+.dashboard button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.25rem;
+  background: #11263c;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.toggle button {
+  background: #dde8f5;
+  color: #11263c;
+}
+
+.toggle button.active {
+  background: #11263c;
+  color: #ffffff;
+}
+
+.auth-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.auth-form label {
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.auth-form input {
+  border: 1px solid #ccd9e8;
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  background: #f9fbfe;
+}
+
+.status {
+  margin: 0.75rem 0 0;
+  padding: 0.8rem 1rem;
+  border-radius: 14px;
+}
+
+.status.success {
+  background: #eaf7ef;
+  color: #13663a;
+}
+
+.status.error {
+  background: #ffefef;
+  color: #9f1c1c;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 1rem;
+  }
+}
