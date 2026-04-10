@@ -50,17 +50,3 @@ Add these in `Settings -> Secrets and variables -> Actions`:
 - `DOCKER_USERNAME`
 - `DOCKER_PASSWORD`
 
-## AWS EC2 Deployment
-
-```bash
-ssh -i your-key.pem ubuntu@YOUR_EC2_PUBLIC_IP
-sudo apt update
-sudo apt install -y docker.io docker-compose-v2
-sudo systemctl enable docker
-sudo systemctl start docker
-sudo usermod -aG docker $USER
-newgrp docker
-docker network create app-network
-docker run -d --name auth-backend --restart unless-stopped -p 5000:5000 --env-file backend.env YOUR_DOCKERHUB_USERNAME/fullstack-auth-backend:latest
-docker run -d --name auth-frontend --restart unless-stopped -p 3000:3000 YOUR_DOCKERHUB_USERNAME/fullstack-auth-frontend:latest
-```
